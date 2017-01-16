@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pub list</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- //for-mobile-apps -->
+<script>
+function handleLoad(e) {
+console.log('Loaded import: ' + e.target.href);
+}
+function handleError(e) {
+console.log('Error loading import: ' + e.target.href);
+}
+</script>
+  <link rel="import" href="importFileHeader.html" onload="handleLoad(event)" onerror="handleError(event)">
+  <link rel="import" href="importFileFooter.html" onload="handleLoad(event)" onerror="handleError(event)">
+
+
+</head>
+<body>
+  <div class="transbox">
+<!--
+  <div class="blog-section"> -->
+  	 <div class="container">
+	   <h3 class="tittle"></h3>
+     <!--<div class="banner-bdy sig"> -->
+        <!-- <div class="single"> -->
+          <div class="leave-a-comment">
+        		<!-- <h3 style="text-align:center;">Leave your comment Here</h3> -->
+        		<form>
+        			<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+        			<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+        			<input type="text" value="Phone Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone Number';}" required="">
+        			<textarea onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type Your Comment here...';}" required="">Type Your Comment here...</textarea>
+        			<input type="submit" value="Add Comment">
+        		</form>
+        	</div>
+        <!-- </div> -->
+      <!-- </div>-->
+    <!-- </div>
+  </div> -->
+
+
+<!-- start use of importFileFooter page-->
+  <!-- <script>
+  var link = document.querySelector('link[rel="import"]');
+  var content = link.import;
+
+  // Grab DOM from importFileFooter.html's document.
+  var el1 = content.querySelector('.importFileHeader');
+  var el = content.querySelector('.importFileFooter');
+
+  document.body.appendChild(el1.cloneNode(true));
+  document.body.appendChild(el.cloneNode(true));
+  </script> -->
+<!-- end use of importFileFooter page-->
+
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Favourite List</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<!-- css -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<!-- <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" /> -->
+<!-- <link href="css/jQuery.lightninBox.css" rel="stylesheet" type="text/css" media="all" /> -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+ <link href="css/onlinepayment.css" rel="stylesheet" type="text/css" media="all" /> 
+<link rel="stylesheet" href="css/simple.css">
+
+
+    </style>
+<!-- /css -->
+<!-- js -->
+<script type="text/javascript" src="js/modernizr.js"></script>
+
+<!-- /js -->
+ <link rel="import" href="importFileHeader.html" onload="handleLoad(event)" onerror="handleError(event)">
+ <link rel="import" href="importFileFooter.html" onload="handleLoad(event)" onerror="handleError(event)">
+</head>
+<body>
+<form id="myform" method="post">
+  <table class="body-wrap">
+    <tr>
+        <td class="container">
+
+            <!-- Message start -->
+            <table>
+                <tr>
+                    <td align="center" class="masthead">
+
+                        <h2>My Favourites...</h2>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content">
+
+                        <h2>Dear Customer,</h2>
+
+                        <p>Here your favourite food items in our menu. It'll be honor to serve you and hope you enjoy our service.</p>
+						<div class="container">
+  <h3>Favourite List</h3>
+  <ul class="list-group">
+    <li class="list-group-item">Pumpkin pie topped with Cool Whip</li>
+    <li class="list-group-item"> cheesecakes</li>
+    <li class="list-group-item">Coconut shrimp with a dipping sauce</li>
+	<li class="list-group-item"> layered coconut cake</li>
+    <li class="list-group-item">Serundeng</li>
+  </ul>
+</div>
+						<p>Thank you for being our valued customers. We are grateful for the pleasure of serving you</p>
+
+                        <table>
+						<tr>
+						     <tr>
+                                <td align="center">
+                                    <p>
+									<form id="myform" method="post">
+									<label>Your Email : </label>
+                                    <input type="text" name="email" />
+                                    <br><br>
+                                    <button  class="button">Email my favourite List</button>
+									
+                                       <!-- <a href="#" class="button">Email my favourite List</a> -->
+									   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+                                      <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+                                       <script type="text/javascript">
+   (function(){
+      emailjs.init("user_OfINvNTqayjxgk3kAe9d6");
+   })();
+</script>
+									   
+										<!--<button type="button" class="button" >Email my favourite List</button> -->
+										 </p>						
+							</tr>
+
+                         </tbody>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+</form>
+</body>
+
+<script>
+var myform = $("form#myform");
+myform.submit(function(event){
+	event.preventDefault();
+
+  // Change to your service ID, or keep using the default service
+  var service_id = "gmail";
+  var template_id = "favourite_list";
+
+  myform.find("button").text("Sending...");
+  emailjs.sendForm("gmail","favourite_list","myform")
+  	.then(function(){ 
+    	alert("Sent!");
+       myform.find("button").text("Email my favourite List");
+    }, function(err) {
+       alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+       myform.find("button").text("Email my favourite List");
+    });
+  return false;
+   });
+  
+  </script>
+
+</html>
